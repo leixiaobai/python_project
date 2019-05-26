@@ -1,0 +1,61 @@
+该程序分为客户端和服务端,目前已经实现以下功能:
+1. 多用户同时登陆
+2. 用户登陆，加密认证
+3. 上传/下载文件，保证文件一致性
+4. 传输过程中现实进度条
+5. 不同用户家目录不同，且只能访问自己的家目录(未实现)
+6. 对用户进行磁盘配额、不同用户配额可不同
+7. 用户登陆server后，可在家目录权限下切换子目录(未实现)
+8. 查看当前目录下文件，新建文件夹
+9. 删除文件和空文件夹
+10. 充分使用面向对象知识
+11. 支持断点续传
+
+
+ftp目录结构
+   |---ftp_client
+   |   |---bin
+   |   |   |---start.py     客户端启动文件
+   |   |   |---__init__.py
+   |   |---conf
+   |   |   |---settings.py
+   |   |   |---__init__.py
+   |   |---core
+   |   |   |---client_actions.py    客户端主要功能实现
+   |   |   |---home         文件下载默认目录
+   |   |   |   |---f.txt
+   |   |   |---main.py      客户端主程序
+   |   |   |---transfer_dict.py
+   |   |   |---__init__.py
+   |   |---db
+   |   |   |---__init__.py
+   |   |---log
+   |   |   |---__init__.py
+   |   |---__init__.py
+   |---ftp_server
+   |   |---bin
+   |   |   |---start.py     服务端启动文件
+   |   |   |---__init__.py
+   |   |---conf
+   |   |   |---settings.py  服务端配置文件
+   |   |   |---__init__.py
+   |   |---core
+   |   |   |---actions.py   服务端登录和注册
+   |   |   |---encryption.py    服务端加密操作
+   |   |   |---handle_db.py     读取文件db数据
+   |   |   |---handle_file.py   操作文件,包括计算文件夹大小,打印目录结构
+   |   |   |---home             用户家目录
+   |   |   |   |---llk
+   |   |   |---main.py          服务端主程序
+   |   |   |---servers.py       服务端主要方法,上传下载等
+   |   |   |---transfer_dict.py 解决黏包问题的网络传输
+   |   |   |---__init__.py
+   |   |---db
+   |   |   |---userinfo         用户信息
+   |   |   |---__init__.py
+   |   |---log
+   |   |   |---__init__.py
+   |   |---__init__.py
+   |---handle_file.py
+   |---README
+   |---__init__.py
